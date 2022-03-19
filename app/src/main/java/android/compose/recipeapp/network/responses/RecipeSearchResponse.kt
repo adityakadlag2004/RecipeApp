@@ -1,6 +1,6 @@
 package android.compose.recipeapp.network.responses
 
-import android.compose.recipeapp.network.model.RecipeNetworkEntity
+import android.compose.recipeapp.network.model.RecipeDto
 import com.google.gson.annotations.SerializedName
 
 class RecipeSearchResponse(
@@ -9,5 +9,5 @@ class RecipeSearchResponse(
     var count: Int,
 
     @SerializedName("results")
-    var recipes: List<RecipeNetworkEntity>,
+    var recipes: List<RecipeDto>,
 )
