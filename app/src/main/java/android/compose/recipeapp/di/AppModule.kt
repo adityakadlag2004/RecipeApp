@@ -1,9 +1,29 @@
 package android.compose.recipeapp.di
 
+import android.compose.recipeapp.presentation.BaseApplication
+import android.content.Context
+import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
-//@InstallIn(ApplicationComponent::class.java)
+@Module
+@InstallIn(SingletonComponent::class)
 object AppModule {
-//sout
+
+    @Singleton
+    @Provides
+    fun provideApplication(@ApplicationContext app: Context): BaseApplication {
+        return app as BaseApplication
+    }
+
+    @Singleton
+    @Provides
+    fun provideRandomString(): String {
+        return "random String"
+    }
+
 
 }
